@@ -1,0 +1,1 @@
+const srulikLoader = new ex.Loader();
