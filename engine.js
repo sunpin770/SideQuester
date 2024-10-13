@@ -1,8 +1,7 @@
 const engineOptions = {
     canvasElementId: `screen`,
-    height: 600,
-    width: 800,
+    height: 800,
+    width: 1100,
 };
-//this isn't a class, just a brand name. Deal with it :)
-const SideQuester = new ex.Engine(engineOptions);
+const SQ = new ex.Engine(engineOptions);
 
