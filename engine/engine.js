@@ -8,4 +8,7 @@ const engineOptions = {
     scenes: scenes,
 };
 const SQ = new ex.Engine(engineOptions);
+SQ.onInitialze = () => {
+    
+}
 
