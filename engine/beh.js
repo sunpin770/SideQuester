@@ -1,7 +1,15 @@
-
-const background1 = new Background(3200, 4400, '/img/prototype_background.png');
-const you = new Player(1000, 1000);
-const mendel = new NPC(1200, 1200);
+//add background
+const background1 = new Background(3200, 4400);
 
 
-you.body.collisionType = ex.CollisionType.None;
+
+//add player
+const you = new Player(622, 568, ex.Color.Green, 2.5);
+you.body.collisionType = ex.CollisionType.Active;
+you.on('collisionStart', () => {console.log("collided")});
+
+//ad npcs
+const mendel = new NPC(553, 313);
+const ita = new NPC(800, 1200, ex.Color.Black);
+const chanale = new NPC(800, 800, ex.Color.Blue);
+const mushka = new NPC(189, 249, ex.Color.Yellow);

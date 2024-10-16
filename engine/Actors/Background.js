@@ -1,16 +1,13 @@
 class Background extends ex.Actor {
-    constructor(height, width, src) {
+    constructor(height, width) {
         super({
-            x: width / 2,
-            y: height / 2,
+            x: width / 3,
+            y: height / 4,
             width: width,
             height: height,
-            color: ex.Color.Yellow,
         });
-        this.protoImgSrc = src;
     };
     onInitialize() {
-        //this.graphics.use(this.protoImgSrc.toSprite())
         this.boundingBox = new ex.BoundingBox(this.x, this.y, this.x + this.width, this.y + this.height)
     }
 }
