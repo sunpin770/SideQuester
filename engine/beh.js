@@ -6,7 +6,6 @@ const background1 = new Background(3200, 4400);
 //add player
 const you = new Player(622, 568, ex.Color.Green, 2.5);
 you.body.collisionType = ex.CollisionType.Active;
-you.on('collisionStart', () => {console.log("collided")});
 
 //ad npcs
 const mendel = new NPC(553, 313);
