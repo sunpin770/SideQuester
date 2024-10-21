@@ -1,7 +1,5 @@
-//for (b in tutorialBounds) {
-//    SQ.add(b);
-//};
-SQ.add(tutorialBounds.b1)
+
+SQ.add(tutorialBounds[0])
 SQ.add(background1);
 
 SQ.currentScene.camera.strategy.lockToActor(you);
