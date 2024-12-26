@@ -10,6 +10,7 @@ class NPC extends ex.Actor {
             //height: 40,
             color: color || ex.Color.Red,
         });
+        this.spriteDir = 3;
         this.body.collisionType = ex.CollisionType.Fixed;
     };
 };
