@@ -1,1 +1,2 @@
 SQ.start(mainLoader);
+calcInput();
