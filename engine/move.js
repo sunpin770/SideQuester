@@ -13,6 +13,10 @@ function calcDir() {
 		return WASD[L];
 	};
 };
+//working:
+//A, WA, S, AS, DS
+//not working:
+//W, WD, D
 function move(actor) {
 	switch (actor.spriteDir) {
 		/*only put breaks after the cardinal directions; the diagonals will fall through and do them too. There may even be a more efficient way to handle this, but I really can't be bothered to figure it out.*/
@@ -37,6 +41,7 @@ function move(actor) {
 			actor.pos.x += actor.speed;
 			break;
 	};
+    console.log(actor.spriteDir)
 };
 function handle(actor) {
 	/*This is the files actual function. the others could be sorted out when they get bigger.*/
@@ -56,5 +61,5 @@ function handle(actor) {
     }
     else {
         actor.spriteDir = 3;
-    }
+    };
 };
