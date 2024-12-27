@@ -10,6 +10,7 @@ function onSpecific(key, callback) {
 	SQ.input.keyboard.on('press', (evt) => {
 		if (evt.key == key) {callback()};
 		//change to ===?
+        console.log(evt.key + " pressed")
 	});
 };
 function offSpecific(key, callback) {

@@ -2,11 +2,8 @@
 //from typer, override for move.js, named handle.js
 function calcDir() {
 	let WASD = SQ.fluidMotion.WASD
-	let L = WASD.length - 1; //does .length return index or actual length?
-	if (L > 0) {
-		return 3;
-	}
-	else if (WASD[L] - 1 == WASD[L - 1]) {
+	let L = WASD.length - 1;
+	if (WASD[L] - 1 == WASD[L - 1]) {
 		return WASD[L] - 0.5;
 	}
 	else if (WASD[L] + 1 == WASD[L - 1]) {
@@ -37,19 +34,27 @@ function move(actor) {
 		case 0.5: //north-east
 			actor.pos.y -= actor.speed;
 		case 4: //east
-			actor.pos.x +=actor.speed;
+			actor.pos.x += actor.speed;
 			break;
 	};
 };
 function handle(actor) {
 	/*This is the files actual function. the others could be sorted out when they get bigger.*/
-	reqDir = calcDir();
-	//if we don't need to turn
-	if (reqDir == actor.spriteDir) {
-		move(actor);
-	}
-	//for now all turns take one frame. eventually when I implement animations I'm going to have to stop using the update() as a crutch and make things happen over multiple frame rates. At that point it may be prudent to make a turn() function, 
-	else {
-		actor.spriteDir = reqDir % 4;
-	};
+    //are we trying to move at all?
+    if (SQ.fluidMotion.WASD.length > 0) {
+	    reqDir = calcDir();
+	    //if we don't need to turn
+	    if (reqDir == actor.spriteDir) {
+	    	move(actor);
+	    }
+	    //for now all turns take one frame. eventually when I implement animations I'm going to have to stop using the update() as a crutch and make things happen over multiple frame rates. At that point it may be prudent to make a turn() function, 
+	    else {
+	    	actor.spriteDir = reqDir % 4;
+	    };  
+        //debug
+        //console.log(SQ.fluidMotion.WASD);
+    }
+    else {
+        actor.spriteDir = 3;
+    }
 };
