@@ -41,7 +41,6 @@ function move(actor) {
 			actor.pos.x += actor.speed;
 			break;
 	};
-    console.log(actor.spriteDir)
 };
 function handle(actor) {
 	/*This is the files actual function. the others could be sorted out when they get bigger.*/
